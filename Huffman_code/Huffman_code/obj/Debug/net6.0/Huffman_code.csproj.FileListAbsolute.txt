@@ -1,0 +1,15 @@
+C:\Users\danya\Huffman-code\Huffman_code\Huffman_code\bin\Debug\net6.0\Huffman_code.exe
+C:\Users\danya\Huffman-code\Huffman_code\Huffman_code\bin\Debug\net6.0\Huffman_code.deps.json
+C:\Users\danya\Huffman-code\Huffman_code\Huffman_code\bin\Debug\net6.0\Huffman_code.runtimeconfig.json
+C:\Users\danya\Huffman-code\Huffman_code\Huffman_code\bin\Debug\net6.0\Huffman_code.dll
+C:\Users\danya\Huffman-code\Huffman_code\Huffman_code\bin\Debug\net6.0\Huffman_code.pdb
+C:\Users\danya\Huffman-code\Huffman_code\Huffman_code\obj\Debug\net6.0\Huffman_code.csproj.AssemblyReference.cache
+C:\Users\danya\Huffman-code\Huffman_code\Huffman_code\obj\Debug\net6.0\Huffman_code.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danya\Huffman-code\Huffman_code\Huffman_code\obj\Debug\net6.0\Huffman_code.AssemblyInfoInputs.cache
+C:\Users\danya\Huffman-code\Huffman_code\Huffman_code\obj\Debug\net6.0\Huffman_code.AssemblyInfo.cs
+C:\Users\danya\Huffman-code\Huffman_code\Huffman_code\obj\Debug\net6.0\Huffman_code.csproj.CoreCompileInputs.cache
+C:\Users\danya\Huffman-code\Huffman_code\Huffman_code\obj\Debug\net6.0\Huffman_code.dll
+C:\Users\danya\Huffman-code\Huffman_code\Huffman_code\obj\Debug\net6.0\refint\Huffman_code.dll
+C:\Users\danya\Huffman-code\Huffman_code\Huffman_code\obj\Debug\net6.0\Huffman_code.pdb
+C:\Users\danya\Huffman-code\Huffman_code\Huffman_code\obj\Debug\net6.0\Huffman_code.genruntimeconfig.cache
+C:\Users\danya\Huffman-code\Huffman_code\Huffman_code\obj\Debug\net6.0\ref\Huffman_code.dll

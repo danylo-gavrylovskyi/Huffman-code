@@ -13,6 +13,20 @@ foreach (char symbol in text)
     }
 }
 
+void CodeGenerator(MinHeapNode heapStart, string str)
+{
+    if (heapStart == null)return;
+
+    if (heapStart.Value != null)
+    {
+        code[heapStart.Value] = str;
+        Console.WriteLine(heapStart.Value + ": " + str);
+    }
+
+    CodeGenerator(heapStart.LeftNode, str + "0");
+    CodeGenerator(heapStart.RightNode, str + "1");
+}
+
 class MinHeapNode
 {
     public string Value;

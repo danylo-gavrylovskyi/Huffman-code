@@ -12,7 +12,7 @@ foreach (char symbol in text)
         symbolCount[symbol]++;
     }
 }
-
+HuffmanCoding(symbolCount);
 void CodeGenerator(MinHeapNode heapStart, string str)
 {
     if (heapStart == null)return;
@@ -25,6 +25,31 @@ void CodeGenerator(MinHeapNode heapStart, string str)
 
     CodeGenerator(heapStart.LeftNode, str + "0");
     CodeGenerator(heapStart.RightNode, str + "1");
+}
+
+void HuffmanCoding(Dictionary<char, int> frequencies)
+{
+    var minHeap = new MinHeap(frequencies.Count);
+    foreach (var symbol in frequencies)
+    {
+        minHeap.Add(new MinHeapNode(symbol.Key.ToString(), symbol.Value));
+    }
+
+    while (!(minHeap.Capacity == 1))
+    {
+        var left = minHeap.Pop();
+        var right = minHeap.Pop();
+
+        var top = new MinHeapNode(null, left.SymbolCount + right.SymbolCount)
+        {
+            LeftNode = left,
+            RightNode = right
+        };
+
+        minHeap.Add(top);
+
+    }
+    CodeGenerator(minHeap.Peek(), null);
 }
 
 class MinHeapNode

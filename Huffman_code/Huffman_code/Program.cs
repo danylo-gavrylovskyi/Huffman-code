@@ -12,3 +12,18 @@ foreach (char symbol in text)
         symbolCount[symbol]++;
     }
 }
+
+class MinHeapNode
+{
+    public string Value;
+    public int SymbolCount;
+    public MinHeapNode LeftNode, RightNode;
+
+    public MinHeapNode(string value, int symbolCount)
+    {
+        this.Value = value;
+        this.SymbolCount = symbolCount;
+        LeftNode = null;
+        RightNode = null;
+    }
+}

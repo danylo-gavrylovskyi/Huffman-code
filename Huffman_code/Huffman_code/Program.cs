@@ -98,6 +98,17 @@ void Decoding(string pathToFile)
 }
 code["END"] = "";
 
+void WriteCoddedFile()
+{
+    using StreamWriter writer = new StreamWriter("C:\\Users\\danya\\Huffman-code\\Huffman_code\\Huffman_code\\coded_text.txt", true);
+    {
+        foreach (var letter in text)
+        {
+            writer.Write(code[letter.ToString()]);
+        }
+    }
+}
+WriteCoddedFile();
 
 class MinHeapNode
 {

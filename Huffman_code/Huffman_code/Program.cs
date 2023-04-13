@@ -27,10 +27,10 @@ void CodeGenerator(MinHeapNode heapStart, string str)
     CodeGenerator(heapStart.RightNode, str + "1");
 }
 
-void HuffmanCoding(Dictionary<char, int> frequencies)
+void HuffmanCoding(Dictionary<char, int> symbolCount)
 {
-    var minHeap = new MinHeap(frequencies.Count);
-    foreach (var symbol in frequencies)
+    var minHeap = new MinHeap(symbolCount.Count);
+    foreach (var symbol in symbolCount)
     {
         minHeap.Add(new MinHeapNode(symbol.Key.ToString(), symbol.Value));
     }
@@ -51,6 +51,53 @@ void HuffmanCoding(Dictionary<char, int> frequencies)
     }
     CodeGenerator(minHeap.Peek(), null);
 }
+
+void Decoding(string pathToFile)
+{
+    var huffmanCode = new Dictionary<string, string>();
+    var lines = File.ReadAllLines(pathToFile);
+    foreach (var line in lines)
+    {
+        if (!line.Contains("END"))
+        {
+            var lineValues = line.Split(": ");
+            if (lineValues[0] == "<N>")
+            {
+                lineValues[0] = "\n";
+            }
+            else if (lineValues[0] == "<R>")
+            {
+                lineValues[0] = "\r";
+            }
+            huffmanCode.Add(lineValues[0], lineValues[1]);
+        }
+        else
+        {
+            break;
+        }
+    }
+    var codedText = lines[lines.Length - 1];
+    var symbolCode = "";
+    foreach (char symbol in codedText)
+    {
+        if (code.ContainsValue(symbolCode))
+        {
+            string result = "";
+            foreach (var obj in code)
+            {
+                if (obj.Value == symbolCode)
+                {
+                    result = obj.Key;
+                }
+            }
+            Console.Write(result);
+            symbolCode = "";
+        }
+        symbolCode += symbol;
+    }
+}
+code["END"] = "";
+
 
 class MinHeapNode
 {

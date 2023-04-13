@@ -65,10 +65,6 @@ void Decoding(string pathToFile)
             {
                 lineValues[0] = "\n";
             }
-            else if (lineValues[0] == "<R>")
-            {
-                lineValues[0] = "\r";
-            }
             huffmanCode.Add(lineValues[0], lineValues[1]);
         }
         else
@@ -78,11 +74,11 @@ void Decoding(string pathToFile)
     }
     var codedText = lines[lines.Length - 1];
     var symbolCode = "";
+    string result = "";
     foreach (char symbol in codedText)
     {
         if (code.ContainsValue(symbolCode))
         {
-            string result = "";
             foreach (var obj in code)
             {
                 if (obj.Value == symbolCode)
@@ -96,11 +92,10 @@ void Decoding(string pathToFile)
         symbolCode += symbol;
     }
 }
-code["END"] = "";
 
-void WriteCoddedFile()
+void WriteCoddedFile(string pathToFile)
 {
-    using StreamWriter writer = new StreamWriter("C:\\Users\\danya\\Huffman-code\\Huffman_code\\Huffman_code\\coded_text.txt", true);
+    using StreamWriter writer = new StreamWriter(pathToFile, true);
     {
         foreach (var letter in text)
         {
@@ -108,7 +103,25 @@ void WriteCoddedFile()
         }
     }
 }
-WriteCoddedFile();
+
+void WriteCodeTableToFile(Dictionary<string, string> code, string pathToFile)
+{
+    using StreamWriter writer = new StreamWriter(pathToFile);
+    foreach (var keyValue in code)
+    {
+        var symbol = keyValue.Key;
+        if (symbol == "\n")
+        {
+            symbol = "<N>";
+        }
+        writer.WriteLine("{0}: {1}", symbol, keyValue.Value);
+    }
+    writer.Close();
+}
+code["END"] = "";
+WriteCodeTableToFile(code, "C:\\Users\\danya\\Huffman-code\\Huffman_code\\Huffman_code\\coded_text.txt");
+WriteCoddedFile("C:\\Users\\danya\\Huffman-code\\Huffman_code\\Huffman_code\\coded_text.txt");
+Decoding("C:\\Users\\danya\\Huffman-code\\Huffman_code\\Huffman_code\\coded_text.txt");
 
 class MinHeapNode
 {
